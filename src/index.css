@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+
+  @apply bg-[#f7f7f8] text-gray-900 dark:bg-[#050807] dark:text-white;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-[#1B6B3A];
+
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400 dark:bg-[#39FF88];
+}
+
+
+::selection {
+  color: #041008;
+  background: rgba(57, 255, 136, 0.72);
+}
+
+button, a, input, textarea, select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid #39FF88;
+  outline-offset: 3px;
+}
+
+
+html, body, #root {
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  overscroll-behavior: none;
+}
+
+button, a {
+  touch-action: manipulation;
+}
+
+@media (max-height: 680px) and (min-width: 768px) {
+  header { min-height: 3.25rem; }
+}
